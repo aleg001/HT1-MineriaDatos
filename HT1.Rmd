@@ -1,0 +1,36 @@
+---
+title: "HDT1-MD"
+output: html_document
+date: "2023-01-28"
+authors: "Alejandro Gomez, Marco Jurado, Diego Cordova"
+---
+
+
+## Hoja de trabajo #1
+
+Documento en el que se trabajará la hoja de trabajo #1 de minería de datos, del ingeniero Luis Furlán.
+
+```{r}
+baseballData = read.csv('baseball_reference_2016_scrape.csv')
+```
+
+
+1.1. Haga una exploración rápida de sus datos para eso haga un resumen de su
+dataset.
+
+```{r}
+summary(baseballData)
+```
+
+1.2. Diga el tipo de cada una de las variables del dataset (cualitativa o categórica,
+cuantitativa continua, cuantitativa discreta)
+```{r}
+
+```
+
+1.3. Incluya los gráficos exploratorios siendo consecuentes con el tipo de variable que
+están representando.
+```{r}
+
+```
+
