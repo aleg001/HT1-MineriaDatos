@@ -24,12 +24,41 @@ summary(baseballData)
 
 1.2. Diga el tipo de cada una de las variables del dataset (cualitativa o categórica,
 cuantitativa continua, cuantitativa discreta)
-```{r}
 
+Primero, se obtuvo la lista de los nombres de variables para comprender los datos de una forma ordenada.
+También, se verificó que si estuviesen las 17 variables explicadas en las instrucciones.
+```{r}
+names(baseballData)
 ```
+- attendance
+- boxscore_url
+- home_team
+- start_time
+- away_team
+- date
+- home_team_errors
+- venue
+- away_team_errors
+- field_type
+- home_team_hits
+- away_team_hits
+- game_duration
+- home_team_runs
+- away_team_runs
+- game_type
+- other_info_string
 
 1.3. Incluya los gráficos exploratorios siendo consecuentes con el tipo de variable que
 están representando.
+
+Tipos de gráficos seleccionados:
+- Cuantitativa Continua = Histogramas
+- Cuantitativa Discreta = Gráficos de Barras
+- Categórica = Gráfico de Pie
+
+Investigación: https://statisticsbyjim.com/basics/data-types/
+
+
 ```{r}
 
 ```
