@@ -94,11 +94,6 @@ ggplot(baseballData, aes(x = "", y = away_team, fill = away_team)) +
   ggtitle("Away Team Pie Chart")
 ```
 ```{r}
-# Para la variable cualitativa de date
-ggplot(baseballData, aes(x = "", y = date, fill = date)) + 
-  geom_bar(width = 1, stat = "identity") + 
-  coord_polar("y") +
-  theme(legend.title = element_text(size=12, face="bold"),legend.text = element_text(size = 10))+
-  ggtitle("Date Pie Chart")
+# Para la variable date
 ```
 
