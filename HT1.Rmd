@@ -2,13 +2,26 @@
 title: "HDT1-MD"
 output: html_document
 date: "2023-01-28"
-authors: "Alejandro Gomez, Marco Jurado, Diego Cordova"
+authors: "Alejandro Gomez"
+
+
+Referencias: "https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf,https://statisticsbyjim.com/basics/data-types/ "
 ---
+
+
+Paquete necesario para gráficos
+
+```{r}
+library(ggplot2)
+```
 
 
 ## Hoja de trabajo #1
 
-Documento en el que se trabajará la hoja de trabajo #1 de minería de datos, del ingeniero Luis Furlán.
+Documento en el que se trabajará los incisos 1.1-1.4 de la Hoja de Trabajo #1.
+Se hizo uso de la función read.csv para leer el archivo csv.
+En caso se desee replicar, se recomienda tener el archivo en el mismo directorio en el cual se está trabajando,
+para evitar realizarle modificaciones al momento de replicarlo.
 
 ```{r}
 baseballData = read.csv('baseball_reference_2016_scrape.csv')
@@ -17,6 +30,8 @@ baseballData = read.csv('baseball_reference_2016_scrape.csv')
 
 1.1. Haga una exploración rápida de sus datos para eso haga un resumen de su
 dataset.
+
+Se hizo uso de la función summary para producir como resultado el resumen de el dataset brindado. De esta forma se puede ver la estructura de cada variable para entender mejor el dataset.
 
 ```{r}
 summary(baseballData)
@@ -27,26 +42,28 @@ cuantitativa continua, cuantitativa discreta)
 
 Primero, se obtuvo la lista de los nombres de variables para comprender los datos de una forma ordenada.
 También, se verificó que si estuviesen las 17 variables explicadas en las instrucciones.
+Esto, con la función de name que arroja el nombre de las variables como resultado.
 ```{r}
 names(baseballData)
 ```
-- attendance
-- boxscore_url
-- home_team
-- start_time
-- away_team
-- date
-- home_team_errors
-- venue
-- away_team_errors
-- field_type
-- home_team_hits
-- away_team_hits
-- game_duration
-- home_team_runs
-- away_team_runs
-- game_type
-- other_info_string
+- attendance = cuantitativa discreta
+- boxscore_url = cualitativa
+- home_team = cualitativa
+- start_time = cuantitativa continua
+- away_team = cualitativa
+- date = cuantitativa continua
+- home_team_errors  cuantitativa discreta
+- venue = cualitativa
+- away_team_errors  cuantitativa discreta
+- field_type = cualitativa
+- home_team_hits = cuantitativa discreta
+- away_team_hits = cuantitativa discreta
+- game_duration = cuantitativa continua
+- home_team_runs = cuantitativa discreta
+- away_team_runs = cuantitativa discreta
+- game_type = cualitativa
+- other_info_string = cualitativa
+
 
 1.3. Incluya los gráficos exploratorios siendo consecuentes con el tipo de variable que
 están representando.
@@ -60,6 +77,28 @@ Investigación: https://statisticsbyjim.com/basics/data-types/
 
 
 ```{r}
+# Para la variable cualitativa de home_team
+ggplot(baseballData, aes(x = "", y = home_team, fill = home_team)) + 
+  geom_bar(width = 1, stat = "identity") + 
+  coord_polar("y") +
+  theme(legend.title = element_text(size=12, face="bold"),legend.text = element_text(size = 10))+
+  ggtitle("Home Team Pie Chart")
 
+```
+```{r}
+# Para la variable cualitativa de away_team
+ggplot(baseballData, aes(x = "", y = away_team, fill = away_team)) + 
+  geom_bar(width = 1, stat = "identity") + 
+  coord_polar("y") +
+  theme(legend.title = element_text(size=12, face="bold"),legend.text = element_text(size = 10))+
+  ggtitle("Away Team Pie Chart")
+```
+```{r}
+# Para la variable cualitativa de date
+ggplot(baseballData, aes(x = "", y = date, fill = date)) + 
+  geom_bar(width = 1, stat = "identity") + 
+  coord_polar("y") +
+  theme(legend.title = element_text(size=12, face="bold"),legend.text = element_text(size = 10))+
+  ggtitle("Date Pie Chart")
 ```
 
